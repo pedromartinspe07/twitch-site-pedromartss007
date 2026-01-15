@@ -1,0 +1,28 @@
+.app {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+main {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* Animações */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(168, 230, 207, 0.5); }
+  50% { box-shadow: 0 0 40px rgba(168, 230, 207, 0.8); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
