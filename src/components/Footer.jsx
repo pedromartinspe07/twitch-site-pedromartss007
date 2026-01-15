@@ -2,6 +2,26 @@ import React from 'react';
 import './Footer.css';
 
 const Footer = () => {
+  const handleSocialClick = (platform) => {
+    const urls = {
+      twitch: 'https://m.twitch.tv/pedromartss007/home',
+      youtube: 'https://youtube.com/@pmartss007?si=LfoNWSUMwOJKkZ-j',
+      twitter: 'https://x.com/pedromartss007?s=21',
+      instagram: 'https://www.instagram.com/pedromartss007?igsh=MXRkaGJid3JiNjlqMQ%3D%3D&utm_source=qr',
+      discord: 'https://discord.gg/R5jmaFKK'
+    };
+    window.open(urls[platform], '_blank');
+  };
+
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    const email = document.getElementById('newsletter-email').value;
+    if (email) {
+      alert(`Obrigado por se inscrever, ${email}! Você receberá notificações das próximas lives.`);
+      document.getElementById('newsletter-email').value = '';
+    }
+  };
+
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -17,21 +37,21 @@ const Footer = () => {
             Junte-se a nós para momentos incríveis!
           </p>
           <div className="footer-social">
-            <a href="#" className="social-icon">
+            <button className="social-icon" onClick={() => handleSocialClick('twitch')}>
               <i className="fab fa-twitch"></i>
-            </a>
-            <a href="#" className="social-icon">
+            </button>
+            <button className="social-icon" onClick={() => handleSocialClick('youtube')}>
               <i className="fab fa-youtube"></i>
-            </a>
-            <a href="#" className="social-icon">
+            </button>
+            <button className="social-icon" onClick={() => handleSocialClick('twitter')}>
               <i className="fab fa-twitter"></i>
-            </a>
-            <a href="#" className="social-icon">
+            </button>
+            <button className="social-icon" onClick={() => handleSocialClick('instagram')}>
               <i className="fab fa-instagram"></i>
-            </a>
-            <a href="#" className="social-icon">
+            </button>
+            <button className="social-icon" onClick={() => handleSocialClick('discord')}>
               <i className="fab fa-discord"></i>
-            </a>
+            </button>
           </div>
         </div>
         
@@ -69,18 +89,18 @@ const Footer = () => {
           <p className="footer-newsletter">
             Receba notificações sobre as próximas lives e novidades!
           </p>
-          <div className="newsletter-form">
-            <input type="email" placeholder="Seu e-mail" />
+          <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
+            <input type="email" placeholder="Seu e-mail" id="newsletter-email" required />
             <button type="submit">
               <i className="fas fa-paper-plane"></i>
             </button>
-          </div>
+          </form>
         </div>
       </div>
       
       <div className="footer-bottom">
         <div className="footer-bottom-content">
-          <p>&copy; {new Date().getFullYear()} Meu Canal Twitch. Todos os direitos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Pedro Martss. Todos os direitos reservados.</p>
           <p>Este site não é afiliado à Twitch. Twitch é uma marca registrada da Twitch Interactive, Inc.</p>
         </div>
         
