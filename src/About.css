@@ -1,0 +1,261 @@
+.about {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 50px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #333;
+}
+
+.section-title span {
+  background: linear-gradient(90deg, #5cdb95, #379683);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.about-content {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 25px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.about-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-card h3::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 30px;
+  background: linear-gradient(to bottom, #5cdb95, #379683);
+  border-radius: 5px;
+}
+
+.about-card p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.content-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.content-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #a8e6cf, #5cdb95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.content-info h4 {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.content-info p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+.about-visual {
+  flex: 1;
+  position: relative;
+  height: 500px;
+}
+
+.visual-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.surreal-element {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  animation: float 8s ease-in-out infinite;
+}
+
+.surreal-1 {
+  top: 10%;
+  right: 15%;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+}
+
+.surreal-2 {
+  top: 60%;
+  right: 5%;
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+  animation-delay: 1s;
+}
+
+.surreal-3 {
+  top: 35%;
+  left: 5%;
+  background: linear-gradient(135deg, #84fab0, #8fd3f4);
+  animation-delay: 2s;
+}
+
+.about-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.image-frame {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.image-content {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #5cdb95, #379683, #05386b);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  color: white;
+  position: relative;
+  z-index: 2;
+  border: 8px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.image-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px 20px;
+  border-radius: 50px;
+}
+
+.image-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 330px;
+  height: 330px;
+  border-radius: 40px;
+  background: rgba(92, 219, 149, 0.2);
+  z-index: 1;
+  animation: pulse 3s infinite;
+}
+
+@media (max-width: 1024px) {
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-visual {
+    height: 400px;
+    width: 100%;
+  }
+
+  .section-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 30px 20px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .image-frame {
+    width: 250px;
+    height: 250px;
+  }
+
+  .image-content {
+    font-size: 4rem;
+  }
+
+  .image-text {
+    font-size: 1.5rem;
+  }
+
+  .surreal-element {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+}
